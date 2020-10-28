@@ -44,4 +44,13 @@ export class AppComponent {
 
     Auth.federatedSignIn();
   }
+
+  /**
+   * globalSignOut
+   */
+  public globalSignOut() {
+    Auth.signOut({ global: true })
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+  }
 }
