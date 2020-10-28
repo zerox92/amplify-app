@@ -3,6 +3,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+Amplify.configure(aws_exports);
+
+import Amplify from "aws-amplify";
+import aws_exports from "./aws-exports";
 
 if (environment.production) {
   enableProdMode();
