@@ -127,4 +127,28 @@ export class AppComponent {
     .then(data => console.log(data))
     .catch(err => console.log(err));
   }
+
+  public googleLogin() {
+    Auth.federatedSignIn({provider: 'Google'}).then(() =>
+      Auth.currentSession()
+    )
+  }
+
+  public facebookLogin() {
+    Auth.federatedSignIn({provider: 'Facebook'}).then(() =>
+      Auth.currentSession()
+    )
+  }
+
+  public appleLogin() {
+    Auth.federatedSignIn({provider: 'SignInWithApple'}).then(() =>
+      Auth.currentSession()
+    )
+  }
+
+  public amazonLogin() {
+    Auth.federatedSignIn({provider: 'LoginWithAmazon'}).then(() =>
+      Auth.currentSession()
+    )
+  }
 }
