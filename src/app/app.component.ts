@@ -57,39 +57,39 @@ export class AppComponent {
     .catch(err => console.log(err));
   }
 
-  async public signIn() {
+  public signIn() {
     try {
      // Test Data
-     var username = "anjuz"
-     var password = "Windows@123"
-         const user = await Auth.signIn(username, password).toPromise();
-         if (user.challengeName === 'SMS_MFA' ||
-             user.challengeName === 'SOFTWARE_TOKEN_MFA') {
-            console.log("logged in")
-         } else if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
-             // const {requiredAttributes} = user.challengeParam; // the array of required attributes, e.g ['email', 'phone_number']
-             // You need to get the new password and required attributes from the UI inputs
-             // and then trigger the following function with a button click
-             // For example, the email and phone_number are required attributes
-             // const {username, email, phone_number} = getInfoFromUserInput();
-             // const loggedUser = await Auth.completeNewPassword(
-             //    user,              // the Cognito User Object
-             //    newPassword,       // the new password
-                 // OPTIONAL, the required attributes
-             //    {
-             //        email,
-             //        phone_number,
-             //    }
-             //);
-         } else if (user.challengeName === 'MFA_SETUP') {
-             // This happens when the MFA method is TOTP
-             // The user needs to setup the TOTP before using it
-             // More info please check the Enabling MFA part
-             Auth.setupTOTP(user);
-         } else {
-             // The user directly signs in
-             console.log(user);
-         }
+       var username = "anjuz"
+       var password = "Windows@123"
+       const user = Auth.signIn(username, password);
+       if (user.challengeName === 'SMS_MFA' ||
+           user.challengeName === 'SOFTWARE_TOKEN_MFA') {
+          console.log("logged in")
+       } else if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
+           // const {requiredAttributes} = user.challengeParam; // the array of required attributes, e.g ['email', 'phone_number']
+           // You need to get the new password and required attributes from the UI inputs
+           // and then trigger the following function with a button click
+           // For example, the email and phone_number are required attributes
+           // const {username, email, phone_number} = getInfoFromUserInput();
+           // const loggedUser = await Auth.completeNewPassword(
+           //    user,              // the Cognito User Object
+           //    newPassword,       // the new password
+               // OPTIONAL, the required attributes
+           //    {
+           //        email,
+           //        phone_number,
+           //    }
+           //);
+       } else if (user.challengeName === 'MFA_SETUP') {
+           // This happens when the MFA method is TOTP
+           // The user needs to setup the TOTP before using it
+           // More info please check the Enabling MFA part
+           Auth.setupTOTP(user);
+       } else {
+           // The user directly signs in
+           console.log(user);
+       }
      } catch (err) {
          if (err.code === 'UserNotConfirmedException') {
              // The error happens if the user didn't finish the confirmation step when signing up
