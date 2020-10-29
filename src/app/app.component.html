@@ -2,12 +2,12 @@
   <div class="App">
     <header class="App-header"><p>Below are some examples of Cognito functionality written using Amplify SDK</p></header>
 
-    <form autocomplete="off" [formGroup]="createForm">
+    <form autocomplete="off" [formGroup]="createForm" (ngSubmit)="signIn(createForm.value)">
     <div class="Amplify-component">
       <h4>Sign In as testUser</h4>
       <input type="text" formControlName="username" autocomplete="off" placeholder="Username">
       <input type="password" formControlName="password" autocomplete="off" placeholder="Password">
-      <button type="submit" (ngSubmit)="signIn(createForm.value)">Sign In</button>
+      <button type="submit">Sign In</button>
     </div>
     </form>
 
