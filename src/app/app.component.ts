@@ -19,7 +19,8 @@ export class AppComponent {
 
 	async ngOnInit() {
     this.createForm = this.fb.group({
-
+      'username': ['', Validators.required],
+      'password': ['', Validators.required],
     });
   }
 
@@ -57,11 +58,13 @@ export class AppComponent {
     .catch(err => console.log(err));
   }
 
-  public signIn() {
+  public signIn(signInForm: FormGroup) {
     try {
      // Test Data
-       var username = "anjuz"
-       var password = "Windows@123"
+     console.log("Signing in with::" + signInForm.username);
+
+       var username = signInForm.username;
+       var password = signInForm.password;
        const user = Auth.signIn(username, password);
        if (user.challengeName === 'SMS_MFA' ||
            user.challengeName === 'SOFTWARE_TOKEN_MFA') {

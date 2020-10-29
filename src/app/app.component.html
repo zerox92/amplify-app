@@ -2,10 +2,14 @@
   <div class="App">
     <header class="App-header"><p>Below are some examples of Cognito functionality written using Amplify SDK</p></header>
 
+    <form autocomplete="off" [formGroup]="createForm">
     <div class="Amplify-component">
       <h4>Sign In as testUser</h4>
-      <button type="submit" (click)="signIn()">Sign In</button>
+      <input type="text" formControlName="username" autocomplete="off" placeholder="Username">
+      <input type="text" formControlName="password" autocomplete="off" placeholder="Password">
+      <button type="submit" (click)="signIn(createForm.value, createForm.value)">Sign In</button>
     </div>
+    </form>
 
 
     <div class="Amplify-component">
