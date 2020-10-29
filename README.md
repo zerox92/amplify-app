@@ -13,10 +13,6 @@ Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:42
 ## APP UI
 ![APP UI](./Read_Me_Images/UI.png?raw=true "Title")
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
 ## Sample `aws-exports.js`
 
  ~~~
@@ -37,3 +33,7 @@ const awsmobile = {
 
 export default awsmobile;
  ~~~
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
