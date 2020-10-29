@@ -25,24 +25,6 @@ export class AppComponent {
   }
 
   public launchHostedUI() {
-    // try {
-    //   Auth.federatedSignIn({'provider': 'Cognito'}).then(
-    //     cred => {
-    //       this.authState = AuthState.SignedIn;
-    //       console.log(cred);
-    //     }
-    //   ).catch(
-    //     e => {
-    //       console.log("THis is calleddd");
-    //       console.log(e);
-    //     }
-    //   );
-    // } catch (error) {
-    //   console.log("Error Calling signInWithGoogle");
-    //   console.log(error);
-    // }
-
-
     Auth.federatedSignIn();
   }
 
