@@ -1,19 +1,47 @@
-<div class="form-body">
-  <form autocomplete="off" [formGroup]="createForm">
-    <div>
-      <label>HostedUI: </label>
-      <button type="submit" (click)="launchHostedUI()">Launch</button>
+<div id="root">
+  <div class="App">
+    <header class="App-header"><p>Below are some examples of Cognito functionality written using Amplify SDK</p></header>
+
+    <div class="Amplify-component">
+      <h4>Sign In as testUser</h4>
+      <button type="submit" (click)="signIn()">Sign In</button>
     </div>
 
-    <div>
-      <label>Global SignOut: </label>
+
+    <div class="Amplify-component">
+      <h4>HostedUI</h4>
+      <button type="submit" (click)="launchHostedUI()">Go to</button>
+    </div>
+
+
+    <div class="Amplify-component">
+      <h4>Global SignOut </h4>
       <button type="submit" (click)="globalSignOut()">Sign out</button>
     </div>
 
-    <div>
-      <label>Current Session: </label>
-      <button type="submit" (click)="currentSession()">Current Session</button>
+
+    <div class="Amplify-component">
+      <h4>Current Authenticated User</h4>
+      <button type="submit" (click)="currentAuthenticatedUser()">Check console</button>
     </div>
 
-  </form>
+
+    <div class="Amplify-component">
+      <h4>Retrieve Current Session</h4>
+      <button type="submit" (click)="currentSession()">Check console</button>
+    </div>
+
+
+    <div class="Amplify-component">
+      <h4>Current User Credentials</h4>
+      <button type="submit" (click)="currentUserCredentials()">Check console</button>
+    </div>
+
+
+    <div class="Amplify-component">
+      <h4>Current Credentials</h4>
+      <button type="submit" (click)="currentCredentials()">Check console</button>
+    </div>
+
+  </div>
 </div>
