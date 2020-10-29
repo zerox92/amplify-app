@@ -115,25 +115,25 @@ export class AppComponent {
   }
 
   public googleLogin() {
-    Auth.federatedSignIn({provider: 'Google'}).then(() =>
+    Auth.federatedSignIn({provider: CognitoHostedUIIdentityProvider.Google}).then(() =>
       Auth.currentSession()
     )
   }
 
   public facebookLogin() {
-    Auth.federatedSignIn({provider: 'Facebook'}).then(() =>
+    Auth.federatedSignIn({provider: CognitoHostedUIIdentityProvider.Facebook}).then(() =>
       Auth.currentSession()
     )
   }
 
   public appleLogin() {
-    Auth.federatedSignIn({provider: 'SignInWithApple'}).then(() =>
+    Auth.federatedSignIn({provider: CognitoHostedUIIdentityProvider.Apple}).then(() =>
       Auth.currentSession()
     )
   }
 
   public amazonLogin() {
-    Auth.federatedSignIn({provider: 'LoginWithAmazon'}).then(() =>
+    Auth.federatedSignIn({provider: CognitoHostedUIIdentityProvider.Amazon}).then(() =>
       Auth.currentSession()
     )
   }
