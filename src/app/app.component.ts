@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Amplify } from "aws-amplify";
+import { Amplify, Hub } from "aws-amplify";
 import Auth, { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth";
 import { onAuthUIStateChange, CognitoUserInterface, AuthState, FormFieldTypes } from '@aws-amplify/ui-components';
 
@@ -12,7 +12,24 @@ import { onAuthUIStateChange, CognitoUserInterface, AuthState, FormFieldTypes } 
 export class AppComponent {
   title = 'amplify-app';
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+    Hub.listen('auth', (data) => {
+    console.log(data);
+        switch (data.payload.event) {
+            case 'signIn':
+                alert("Signed in");
+                break;
+            case 'signIn_failure':
+                alert("Sign in failure");
+                break;
+      case  'signOut':
+        alert("Sign Out");
+                break;
+            default:
+                break;
+        }
+    });
+  }
 
 
   public createForm: FormGroup;
