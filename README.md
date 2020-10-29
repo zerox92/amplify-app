@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## APP UI
-![APP UI](./Read_Me_Images/UI.jpg?raw=true "Title")
+![APP UI](./Read_Me_Images/UI.png?raw=true "Title")
 
 ## Further help
 
